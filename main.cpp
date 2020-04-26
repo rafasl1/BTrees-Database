@@ -22,19 +22,26 @@ int main(){
 
         if(strcmp(insere,"INSERE")){
             // insere()
+            cout << "Deu certo" << endl;
 
         }else if(strcmp(busca,"BUSCA")){
             // busca()
+            cout << "Deu certo" << endl;
             
         }else if(strcmp(remove,"REMOVE")){
             // remove()
+            cout << "Deu certo" << endl;
             
         }else if(strcmp(atualiza,"ATUALIZA")){
             // atualiza
+            cout << "Deu certo" << endl;
             
         }else if(strcmp(imprimeFrag,"IMPRIME_FRAGMENTACAO")){
             // imprimeFrag()
+            cout << "Deu certo" << endl;
             
+        }else{
+            cout << "Deu tudo errado" << endl;
         }
 
     } while(strcmp(entrada,fechar));

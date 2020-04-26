@@ -3,7 +3,7 @@
 #include <string.h>
 
 char* slicing(char* entrada,int i){
-    char slicedEntrada[100];
+    char* slicedEntrada = (char*) malloc(i*sizeof(char));
     for(int a = 0; a < i; a++){
         slicedEntrada[a] = entrada[a];
     }
