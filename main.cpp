@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
+#include "functions.cpp"
 
 using namespace std;
 
@@ -12,7 +13,29 @@ int main(){
     do {
 
         cin >> entrada;
-        cout << "Si fode ai cara" << endl;
+        
+        char* insere = slicing(entrada,6);
+        char* busca = slicing(entrada,5);
+        char* remove = slicing(entrada,6);
+        char* atualiza = slicing(entrada,8);
+        char* imprimeFrag = slicing(entrada,20);
+
+        if(strcmp(insere,"INSERE")){
+            // insere()
+
+        }else if(strcmp(busca,"BUSCA")){
+            // busca()
+            
+        }else if(strcmp(remove,"REMOVE")){
+            // remove()
+            
+        }else if(strcmp(atualiza,"ATUALIZA")){
+            // atualiza
+            
+        }else if(strcmp(imprimeFrag,"IMPRIME_FRAGMENTACAO")){
+            // imprimeFrag()
+            
+        }
 
     } while(strcmp(entrada,fechar));
 
