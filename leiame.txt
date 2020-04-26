@@ -1,0 +1,11 @@
+RAFAEL SILVA DE LIMA - 11295790
+
+--------------------------------------------------------------------
+
+Para compilar um arquivo C++ no windows: 
+$ g++ -o <nome do executavel>.exe <nome do programa>.cpp
+
+Para executar o programa compilado:
+$ <nome do programa>.exe
+
+--------------------------------------------------------------------
