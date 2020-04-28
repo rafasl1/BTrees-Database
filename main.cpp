@@ -13,35 +13,35 @@ int main(){
     do {
 
         cin >> entrada;
-        
+
         char* insere = slicing(entrada,6);
         char* busca = slicing(entrada,5);
         char* remove = slicing(entrada,6);
         char* atualiza = slicing(entrada,8);
         char* imprimeFrag = slicing(entrada,20);
 
-        if(strcmp(insere,"INSERE")){
+        if(strcmp(insere,"INSERE")==0){
             // insere()
-            cout << "Deu certo" << endl;
+            cout << "Insere" << endl;
 
-        }else if(strcmp(busca,"BUSCA")){
+        }else if(strcmp(busca,"BUSCA")==0){
             // busca()
-            cout << "Deu certo" << endl;
+            cout << "Busca" << endl;
             
-        }else if(strcmp(remove,"REMOVE")){
+        }else if(strcmp(remove,"REMOVE")==0){
             // remove()
-            cout << "Deu certo" << endl;
+            cout << "Removeu" << endl;
             
-        }else if(strcmp(atualiza,"ATUALIZA")){
+        }else if(strcmp(atualiza,"ATUALIZA")==0){
             // atualiza
-            cout << "Deu certo" << endl;
+            cout << "Atualizou urru" << endl;
             
-        }else if(strcmp(imprimeFrag,"IMPRIME_FRAGMENTACAO")){
+        }else if(strcmp(imprimeFrag,"IMPRIME_FRAGMENTACAO")==0){
             // imprimeFrag()
-            cout << "Deu certo" << endl;
+            cout << "Fragmentacao impressa" << endl;
             
         }else{
-            cout << "Deu tudo errado" << endl;
+            cout << "Entrada invalida" << endl;
         }
 
     } while(strcmp(entrada,fechar));
