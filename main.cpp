@@ -14,29 +14,29 @@ int main(){
 
         cin >> entrada;
 
-        char* insere = slicing(entrada,6);
-        char* busca = slicing(entrada,5);
-        char* remove = slicing(entrada,6);
-        char* atualiza = slicing(entrada,8);
-        char* imprimeFrag = slicing(entrada,20);
+        char insere[] = {"INSERE"};
+        char busca[] = {"BUSCA"};
+        char remove[] = {"REMOVE"};
+        char atualiza[] = {"ATUALIZA"};
+        char imprimeFrag[] = {"IMPRIME_FRAGMENTACAO"};
 
-        if(strcmp(insere,"INSERE")==0){
+        if(palavrasIguais(entrada, insere, 6)){
             // insere()
             cout << "Insere" << endl;
 
-        }else if(strcmp(busca,"BUSCA")==0){
+        }else if(palavrasIguais(entrada, busca, 5)){
             // busca()
             cout << "Busca" << endl;
             
-        }else if(strcmp(remove,"REMOVE")==0){
+        }else if(palavrasIguais(entrada, remove, 6)){
             // remove()
             cout << "Removeu" << endl;
             
-        }else if(strcmp(atualiza,"ATUALIZA")==0){
+        }else if(palavrasIguais(entrada, atualiza, 8)){
             // atualiza
             cout << "Atualizou urru" << endl;
             
-        }else if(strcmp(imprimeFrag,"IMPRIME_FRAGMENTACAO")==0){
+        }else if(palavrasIguais(entrada, imprimeFrag, 20)){
             // imprimeFrag()
             cout << "Fragmentacao impressa" << endl;
             

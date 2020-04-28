@@ -3,7 +3,7 @@
 #include <string.h>
 
 using namespace std;
-
+/*
 char* slicing(char* entrada,int i){
     char* slicedEntrada = (char*) malloc(i*sizeof(char));
     for(int a = 0; a < i; a++){
@@ -11,6 +11,13 @@ char* slicing(char* entrada,int i){
     }
     cout << slicedEntrada << endl;
     return slicedEntrada;
+}*/
+
+bool palavrasIguais(char palavra1[],char palavra2[], int n){
+    for(int i = 0; i < n; i++){
+        if(!(palavra1[i]==palavra2[i])) return false;
+    }
+    return true;
 }
 /*
 void insere(FILE* documento, char* str){
