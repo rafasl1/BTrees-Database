@@ -9,6 +9,8 @@ int main(){
     
     char entrada[100]; // a maior entrada do Freire tinha 79
     const char fechar[] = "FECHAR";
+    FILE* documento;
+    char str[] = {"Rafa"};
     
     do {
 
@@ -21,27 +23,29 @@ int main(){
         char imprimeFrag[] = {"IMPRIME_FRAGMENTACAO"};
 
         if(palavrasIguais(entrada, insere, 6)){
-            // insere()
-            cout << "Insere" << endl;
+            documento = fopen("memoriaSecundaria.txt","w");
+            fwrite(str, 1, sizeof(str), documento);
+            printf("REGISTRO INSERIDO COM SUCESSO\n");
+            fclose(documento);
 
         }else if(palavrasIguais(entrada, busca, 5)){
             // busca()
-            cout << "Busca" << endl;
+            printf("Busca\n");
             
         }else if(palavrasIguais(entrada, remove, 6)){
             // remove()
-            cout << "Removeu" << endl;
+            printf("Removeu\n");
             
         }else if(palavrasIguais(entrada, atualiza, 8)){
             // atualiza
-            cout << "Atualizou urru" << endl;
+            printf("Atualizou\n");
             
         }else if(palavrasIguais(entrada, imprimeFrag, 20)){
             // imprimeFrag()
-            cout << "Fragmentacao impressa" << endl;
+            printf("Fragmentacao impressa\n");
             
         }else{
-            cout << "Entrada invalida" << endl;
+           printf("Entrada invalida\n");
         }
 
     } while(strcmp(entrada,fechar));
