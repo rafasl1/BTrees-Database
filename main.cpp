@@ -8,7 +8,7 @@ using namespace std;
 int main(){
     
     char entrada[100]; // a maior entrada do Freire tinha 79
-    const char fechar[] = "FECHAR";
+    char fechar[] = "FECHAR";
     FILE* documento;
     char str[] = {"Rafa"};
     
@@ -44,13 +44,14 @@ int main(){
             // imprimeFrag()
             printf("Fragmentacao impressa\n");
             
-        }else{
+        }else if(palavrasIguais(entrada, fechar, 6)){
+            printf("Voce saiu do programa!\n");
+        }
+        else{
            printf("Entrada invalida\n");
         }
 
     } while(strcmp(entrada,fechar));
-
-    cout << "Vc saiu do programa";
 
     return 0;
 }
