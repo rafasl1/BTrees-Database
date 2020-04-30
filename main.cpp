@@ -23,7 +23,7 @@ int main(){
         char imprimeFrag[] = {"IMPRIME_FRAGMENTACAO"};
 
         if(palavrasIguais(entrada, insere, 6)){
-            documento = fopen("memoriaSecundaria.txt","w");
+            documento = fopen("memoriaSecundaria.txt","a+");
             fwrite(str, 1, sizeof(str), documento);
             printf("REGISTRO INSERIDO COM SUCESSO\n");
             fclose(documento);

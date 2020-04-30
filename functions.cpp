@@ -11,6 +11,12 @@ char* slicing(char* entrada,int i){
     }
     cout << slicedEntrada << endl;
     return slicedEntrada;
+
+void insere(FILE* documento, char* str){
+    documento = fopen("memoriaSecundaria.txt","w");
+    fwrite(str, 1, sizeof(str), documento);
+    cout << "REGISTRO INSERIDO COM SUCESSO" << endl;
+    fclose(documento);
 }*/
 
 bool palavrasIguais(char palavra1[],char palavra2[], int n){
@@ -19,10 +25,3 @@ bool palavrasIguais(char palavra1[],char palavra2[], int n){
     }
     return true;
 }
-/*
-void insere(FILE* documento, char* str){
-    documento = fopen("memoriaSecundaria.txt","w");
-    fwrite(str, 1, sizeof(str), documento);
-    cout << "REGISTRO INSERIDO COM SUCESSO" << endl;
-    fclose(documento);
-}*/
