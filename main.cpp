@@ -8,7 +8,7 @@ using namespace std;
 int main(){
     
     char entrada[100]; // a maior entrada do Freire tinha 79
-    char fechar[] = "FECHAR";
+    char fechar[] = "FECHA";
     FILE* documento;
     char str[] = {"Rafa"};
     
@@ -25,24 +25,20 @@ int main(){
         if(palavrasIguais(entrada, insere, 6)){
             documento = fopen("memoriaSecundaria.txt","a+");
             fwrite(str, 1, sizeof(str), documento);
-            printf("REGISTRO INSERIDO COM SUCESSO\n");
+            printf("NOVO REGISTRO CRIADO COM SUCESSO\n");
             fclose(documento);
 
         }else if(palavrasIguais(entrada, busca, 5)){
-            // busca()
-            printf("Busca\n");
+            buscaRegistro();
             
         }else if(palavrasIguais(entrada, remove, 6)){
-            // remove()
-            printf("Removeu\n");
+            removeRegistro();
             
         }else if(palavrasIguais(entrada, atualiza, 8)){
-            // atualiza
-            printf("Atualizou\n");
+            atualizaRegistro();
             
         }else if(palavrasIguais(entrada, imprimeFrag, 20)){
-            // imprimeFrag()
-            printf("Fragmentacao impressa\n");
+            imprimeFragmentacao(143,28);
             
         }else if(palavrasIguais(entrada, fechar, 6)){
             printf("Voce saiu do programa!\n");
