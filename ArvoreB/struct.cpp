@@ -1,4 +1,6 @@
 #define b_tree_t 10
+#include <iostream>
+#include <stdlib.h>
 
 typedef struct No {
     int nChaves;
