@@ -16,10 +16,10 @@ void salvaDadosDaInsercao(char entrada[], int n, char cpf[], char nome[], char s
     char delimitador[2] = ",", delimitadorFinal[2] = ")";
     int contadorDeVirgulas = 0, iteradorDeCampos = 0;
     for(int i = 8; i < n; i++){
-        if(entrada[i] == delimitadorFinal[1]){
+        if(entrada[i] == delimitadorFinal[0]){
             break;
         }
-        if(entrada[i] == delimitador[1]){
+        if(entrada[i] == delimitador[0]){
             iteradorDeCampos = 0;
             contadorDeVirgulas++;
             continue;
@@ -27,25 +27,32 @@ void salvaDadosDaInsercao(char entrada[], int n, char cpf[], char nome[], char s
         if(contadorDeVirgulas == 0){
             cpf[iteradorDeCampos] = entrada[i];
             iteradorDeCampos++;
+            continue;
         }else if(contadorDeVirgulas == 1){
             nome[iteradorDeCampos] = entrada[i];
             iteradorDeCampos++;
+            continue;
         }else if(contadorDeVirgulas == 2){
             sobrenome[iteradorDeCampos] = entrada[i];
             iteradorDeCampos++;
+            continue;
         }else if(contadorDeVirgulas == 3){
             curso[iteradorDeCampos] = entrada[i];
             iteradorDeCampos++;
+            continue;
         }else if(contadorDeVirgulas == 4){
             sexo[iteradorDeCampos] = entrada[i];
             iteradorDeCampos++;
+            continue;
         }else if(contadorDeVirgulas == 5){
             dataNascimento[iteradorDeCampos] = entrada[i];
             iteradorDeCampos++;
+            continue;
         }else{
             cout << "Deu merda no contador" << endl;
         }
     }
+    cout << "Iterador de campos e contador de virgulas: " << iteradorDeCampos << " " << contadorDeVirgulas << endl;
 }
 
 void imprimeFragmentacao(float bytesOcupados, float bytesLivres){

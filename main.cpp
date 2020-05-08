@@ -2,25 +2,25 @@
 #include <stdio.h>
 #include <string.h>
 #include "functions.cpp"
+#include <string>
 
 using namespace std;
 
 int main(){
     
-    char entrada[100]; // a maior entrada do Freire tinha 79
+    char entrada[100] = {}; // a maior entrada do Freire tinha 79
     char fechar[] = "FECHA";
    // FILE* documento;
     char str[] = {"Rafa"};
-    char cpf[10];
-    char nome[15];
-    char sobrenome[25];
-    char curso[30];
-    char sexo[2];
-    char dataNascimento[11];
+    char cpf[10] = {};
+    char nome[15] = {};
+    char sobrenome[25] = {};
+    char curso[30] = {};
+    char sexo[2] = {};
+    char dataNascimento[11] = {};
     
     do {
-
-        cin >> entrada;
+        cin.getline (entrada,100);
         cout << entrada << endl;
 
         char insere[] = {"INSERE("};
