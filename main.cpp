@@ -11,7 +11,6 @@ int main(){
     char entrada[100] = {}; // a maior entrada do Freire tinha 79
     char fechar[] = "FECHA";
    // FILE* documento;
-    char str[] = {"Rafa"};
     char cpf[10] = {};
     char nome[15] = {};
     char sobrenome[25] = {};
