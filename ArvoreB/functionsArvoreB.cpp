@@ -78,3 +78,46 @@ void splitArvoreB(No* x, int i, No* y){
 
    // disk write no x, y e z
 }
+
+void insereNaArvoreB(Arv_B* arvore, int k){
+    No* r = T->raiz;
+
+    if(r->n == (2*b_tree_t - 1)){
+        No* s = alocaNo(false);
+        arvore->raiz = s;
+        s->c[0] = r;
+        splitArvoreB(s,0,r);
+        insereNaArvoreBnaoCheia(s,k);
+    }else{
+        insereNaArvoreBnaoCheia(r,k);
+    }
+}
+
+void insereNaArvoreBnaoCheia(No* x, int k){
+    int i = x->nChaves-1;
+    if(x->folha){
+        while(x->folha){
+            x->chave[i+1] = x->chave[i];
+            i--;
+        }
+
+        x->chave[i+1] = k;
+        x->nChaves++;
+        //disk write x
+    }else{
+        while(i >= 0 && k < x->chave[i]){
+            i--;
+        }
+        i++;
+        // disk read x->c[i]
+
+        if(x->c[i]->nChaves == 2*b_tree_t - 1){
+            splitArvoreB(x,i,x->c[i]);
+
+            if(k > x->chave[i]){
+                i++;
+            }
+        }
+        insereNaArvoreBnaoCheia(x->c[i], k);
+    }
+}
