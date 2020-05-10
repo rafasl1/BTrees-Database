@@ -80,9 +80,9 @@ void splitArvoreB(No* x, int i, No* y){
 }
 
 void insereNaArvoreB(Arv_B* arvore, int k){
-    No* r = T->raiz;
+    No* r = arvore->raiz;
 
-    if(r->n == (2*b_tree_t - 1)){
+    if(r->nChaves == (2*b_tree_t - 1)){
         No* s = alocaNo(false);
         arvore->raiz = s;
         s->c[0] = r;

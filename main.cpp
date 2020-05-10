@@ -12,9 +12,9 @@ int main(){
     char fechar[] = "FECHA";
    // FILE* documento;
     char cpf[10] = {};
-    char nome[15] = {};
-    char sobrenome[25] = {};
-    char curso[30] = {};
+    char nome[50] = {};
+    char sobrenome[50] = {};
+    char curso[50] = {};
     char sexo[2] = {};
     char dataNascimento[11] = {};
     
