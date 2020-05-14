@@ -49,10 +49,9 @@ void salvaDadosDaInsercao(char entrada[], int n, char cpf[], char nome[], char s
             iteradorDeCampos++;
             continue;
         }else{
-            cout << "Deu merda no contador" << endl;
+            cout << "Deu ruim no contador" << endl;
         }
     }
-    cout << "Iterador de campos e contador de virgulas: " << iteradorDeCampos << " " << contadorDeVirgulas << endl;
 }
 
 void imprimeFragmentacao(float bytesOcupados, float bytesLivres){

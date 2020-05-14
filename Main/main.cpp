@@ -1,16 +1,17 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
-#include "Funcoes.cpp"
 #include <string>
+#include "Funcoes.cpp"
+#include "Buffer.cpp"
+#include "Registro.cpp"
 
 using namespace std;
 
 int main(){
     
-    char entrada[100] = {}; // a maior entrada do Freire tinha 79
+    char entrada[100] = {};
     char fechar[] = "FECHA";
-   // FILE* documento;
     char cpf[10] = {};
     char nome[50] = {};
     char sobrenome[50] = {};
@@ -33,6 +34,8 @@ int main(){
             fwrite(str, 1, sizeof(str), documento);
             printf("NOVO REGISTRO CRIADO COM SUCESSO\n");
             fclose(documento);*/
+            Registro registro = leRegistroStdin(cpf,nome,sobrenome,curso,sexo,dataNascimento);
+            gravaRegistro(registro);
             salvaDadosDaInsercao(entrada,100,cpf,nome,sobrenome,curso,sexo,dataNascimento);
             cout << "Deu bom" << endl;
 
