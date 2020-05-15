@@ -30,7 +30,7 @@ bool leProximoRegistro(Registro* reg) {
 
    if(tamReg != 0) {
       Buffer buffer = leBloco(tamReg);
-      reg->id = leIntDoBuffer(&buffer);
+      leStringDoBuffer(&buffer,reg->cpf);
       leStringDoBuffer(&buffer, reg->nome);
       leStringDoBuffer(&buffer, reg->sobrenome);
       return true;
@@ -45,28 +45,21 @@ bool leProximoRegistro(Registro* reg) {
   --------------------------------------------
 */
 void mostraRegistro(Registro reg) {
-   cout << "CPF: " << reg.cpf << endl;
-   cout << "Nome: " << reg.nome << endl;
-   cout << "Sobrenome: " << reg.sobrenome << endl;
+   cout << "CPF = " << reg.cpf << endl;
+   cout << "NOME = " << reg.nome << endl;
+   cout << "SOBRENOME = " << reg.sobrenome << endl;
+   cout << "CURSO = " << reg.curso << endl;
+   cout << "SEXO = " << reg.sexo << endl;
+   cout << "DATA_NASCIMENTO = " << reg.dataNascimento << endl;
 }
 
-void leLinhaStdin(char* s) {
-   char c = getc(stdin);
-   int i = 0;
-
-   while(c != '\n') {
-      s[i++] = (char)c;
-      c = getc(stdin);
-   }
-
-   s[i] = '\0';
-}
-
-Registro leRegistroStdin(char cpf[], char nome[], char sobrenome[], char curso[], char sexo[], char dataNascimento[]) {
+Registro colocaDadosNoRegistro(char cpf[], char nome[], char sobrenome[], char curso[], char sexo[], char dataNascimento[]) {
    Registro reg;
-   cin >> reg.cpf;
-   getc(stdin); // le lixo ('\n')
-   leLinhaStdin(reg.nome);
-   leLinhaStdin(reg.sobrenome);
+   reg.cpf = cpf;
+   reg.nome = nome;
+   reg.sobrenome = sobrenome;
+   reg.curso = curso;
+   reg.sexo = sexo;
+   reg.dataNascimento = dataNascimento;
    return reg;
 }
