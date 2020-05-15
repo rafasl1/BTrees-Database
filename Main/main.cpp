@@ -3,8 +3,7 @@
 #include <string.h>
 #include <string>
 #include "Funcoes.cpp"
-#include "Buffer.cpp"
-#include "Registro.cpp"
+#include "funcoesRegistro.cpp"
 
 using namespace std;
 

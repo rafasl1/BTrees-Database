@@ -1,16 +1,8 @@
-#include "Buffer.cpp"
-
-using namespace std;
-
-typedef struct Registro {
-   char* cpf;
-   char* nome;
-   char* sobrenome;
-   char* curso;
-   char* sexo;
-   char* dataNascimento;
-} Registro;
-
+#include <cstring>
+#include <iostream>
+#include <stdio.h>
+#include "funcoesBuffer.cpp"
+#include "Registro.h"
 
 void gravaRegistro(Registro reg) {
    int tamReg = strlen(reg.cpf) + strlen(reg.nome) + strlen(reg.sobrenome) + 3;

@@ -1,16 +1,7 @@
 #include <cstring>
 #include <iostream>
 #include <stdio.h>
-#define TAM_MAX_BUFFER 512
-#define SEPARADOR_CHAR '|'
-
-using namespace std;
-
-typedef struct Buffer {
-   char registro[TAM_MAX_BUFFER];
-   int prox;
-} Buffer;
-
+#include "Buffer.h"
 
 FILE *arq = NULL;
 char SEPARADOR[2] = {SEPARADOR_CHAR, '\0'}; // nao usei define para evitar warning
