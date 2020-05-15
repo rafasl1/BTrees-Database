@@ -21,7 +21,6 @@ int main(){
     
     do {
         cin.getline (entrada,100);
-        cout << entrada << endl;
 
         char insere[] = {"INSERE("};
         char busca[] = {"BUSCA"};
@@ -34,14 +33,25 @@ int main(){
             fwrite(str, 1, sizeof(str), documento);
             printf("NOVO REGISTRO CRIADO COM SUCESSO\n");
             fclose(documento);*/
-            Registro registro = leRegistroStdin(cpf,nome,sobrenome,curso,sexo,dataNascimento);
+            //salvaDadosDaInsercao(entrada,100,cpf,nome,sobrenome,curso,sexo,dataNascimento);
+            Registro registro = colocaDadosNoRegistro(cpf,nome,sobrenome,curso,sexo,dataNascimento);
+            abreArqEscrita("memoriaSecundaria.txt");
             gravaRegistro(registro);
-            salvaDadosDaInsercao(entrada,100,cpf,nome,sobrenome,curso,sexo,dataNascimento);
             cout << "Deu bom" << endl;
+            fechaArq();
 
         }else if(palavrasIguais(entrada, busca, 5)){
-            buscaRegistro(cpf,nome,sobrenome,curso,sexo,dataNascimento);
-            
+            //buscaRegistro(cpf,nome,sobrenome,curso,sexo,dataNascimento);
+            abreArqLeitura("memoriaSecundaria.txt");
+            Registro reg;
+            while(leProximoRegistro(&reg)) {
+                cout << "---------" << endl;
+                mostraRegistro(reg);
+            }
+            cout << "---------" << endl;
+
+            fechaArq();
+
         }else if(palavrasIguais(entrada, remove, 6)){
             removeRegistro();
             
