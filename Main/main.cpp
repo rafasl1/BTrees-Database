@@ -11,12 +11,12 @@ int main(){
     
     char entrada[100] = {};
     char fechar[] = "FECHA";
-    char cpf[10] = {};
-    char nome[50] = {};
-    char sobrenome[50] = {};
-    char curso[50] = {};
-    char sexo[2] = {};
-    char dataNascimento[11] = {};
+    char* cpf = (char*)malloc(sizeof(char)*10);
+    char* nome = (char*)malloc(sizeof(char)*50);
+    char* sobrenome = (char*)malloc(sizeof(char)*50);
+    char* curso = (char*)malloc(sizeof(char)*50);
+    char* sexo = (char*)malloc(sizeof(char)*2);
+    char* dataNascimento = (char*)malloc(sizeof(char)*11);
     
     do {
         cin.getline (entrada,100);
@@ -30,19 +30,19 @@ int main(){
         if(palavrasIguais(entrada, insere, 7)){
          /*   documento = fopen("memoriaSecundaria.txt","a+");
             fwrite(str, 1, sizeof(str), documento);
-            printf("NOVO REGISTRO CRIADO COM SUCESSO\n");
             fclose(documento);*/
             //salvaDadosDaInsercao(entrada,100,cpf,nome,sobrenome,curso,sexo,dataNascimento);
+            salvaDadosInsere(entrada,100,cpf,nome,sobrenome,curso,sexo,dataNascimento);
             Registro registro;
             colocaDadosNoRegistro(&registro, cpf,nome,sobrenome,curso,sexo,dataNascimento);
-            abreArqEscrita("memoriaSecundaria.txt");
+            fopen("memoriaSecundaria.txt","wb");
             gravaRegistro(registro);
-            cout << "Deu bom" << endl;
+            printf("NOVO REGISTRO CRIADO COM SUCESSO\n");
             fechaArq();
 
         }else if(palavrasIguais(entrada, busca, 5)){
             //buscaRegistro(cpf,nome,sobrenome,curso,sexo,dataNascimento);
-            abreArqLeitura("memoriaSecundaria.txt");
+            fopen("memoriaSecundaria.txt","rb");
             Registro reg;
             while(leProximoRegistro(&reg)) {
                 cout << "---------" << endl;

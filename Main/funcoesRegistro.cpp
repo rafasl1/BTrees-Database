@@ -24,6 +24,9 @@ bool leProximoRegistro(Registro* reg) {
       leStringDoBuffer(&buffer,reg->cpf);
       leStringDoBuffer(&buffer, reg->nome);
       leStringDoBuffer(&buffer, reg->sobrenome);
+      leStringDoBuffer(&buffer, reg->curso);
+      leStringDoBuffer(&buffer, reg->sexo);
+      leStringDoBuffer(&buffer, reg->dataNascimento);
       return true;
    } else {
       return false;
@@ -44,7 +47,7 @@ void mostraRegistro(Registro reg) {
    cout << "DATA_NASCIMENTO = " << reg.dataNascimento << endl;
 }
 
-void colocaDadosNoRegistro(Registro *reg,char cpf[], char nome[], char sobrenome[], char curso[], char sexo[], char dataNascimento[]) {
+void colocaDadosNoRegistro(Registro *reg,char* cpf, char* nome, char* sobrenome, char* curso, char* sexo, char* dataNascimento) {
    reg->cpf = cpf;
    reg->nome = nome;
    reg->sobrenome = sobrenome;
