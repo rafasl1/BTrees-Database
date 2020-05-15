@@ -34,7 +34,8 @@ int main(){
             printf("NOVO REGISTRO CRIADO COM SUCESSO\n");
             fclose(documento);*/
             //salvaDadosDaInsercao(entrada,100,cpf,nome,sobrenome,curso,sexo,dataNascimento);
-            Registro registro = colocaDadosNoRegistro(cpf,nome,sobrenome,curso,sexo,dataNascimento);
+            Registro registro;
+            colocaDadosNoRegistro(&registro, cpf,nome,sobrenome,curso,sexo,dataNascimento);
             abreArqEscrita("memoriaSecundaria.txt");
             gravaRegistro(registro);
             cout << "Deu bom" << endl;

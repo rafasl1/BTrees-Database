@@ -58,13 +58,11 @@ void mostraRegistro(Registro reg) {
    cout << "DATA_NASCIMENTO = " << reg.dataNascimento << endl;
 }
 
-Registro colocaDadosNoRegistro(char cpf[], char nome[], char sobrenome[], char curso[], char sexo[], char dataNascimento[]) {
-   Registro reg;
-   reg.cpf = cpf;
-   reg.nome = nome;
-   reg.sobrenome = sobrenome;
-   reg.curso = curso;
-   reg.sexo = sexo;
-   reg.dataNascimento = dataNascimento;
-   return reg;
+void colocaDadosNoRegistro(Registro *reg,char cpf[], char nome[], char sobrenome[], char curso[], char sexo[], char dataNascimento[]) {
+   reg->cpf = cpf;
+   reg->nome = nome;
+   reg->sobrenome = sobrenome;
+   reg->curso = curso;
+   reg->sexo = sexo;
+   reg->dataNascimento = dataNascimento;
 }
