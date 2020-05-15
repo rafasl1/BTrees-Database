@@ -1,20 +1,14 @@
 #include "Buffer.cpp"
-#define TAM_MAX_CPF 10
-#define TAM_MAX_NOME 50
-#define TAM_MAX_SOBRENOME 50
-#define TAM_MAX_CURSO 50
-#define TAM_MAX_SEXO 2
-#define TAM_MAX_DATA_NASCIMENTO 11
 
 using namespace std;
 
 typedef struct Registro {
-   char cpf[TAM_MAX_CPF];
-   char nome[TAM_MAX_NOME];
-   char sobrenome[TAM_MAX_SOBRENOME];
-   char curso[TAM_MAX_CURSO];
-   char sexo[TAM_MAX_SEXO];
-   char dataNascimento[TAM_MAX_DATA_NASCIMENTO];
+   char* cpf;
+   char* nome;
+   char* sobrenome;
+   char* curso;
+   char* sexo;
+   char* dataNascimento;
 } Registro;
 
 
