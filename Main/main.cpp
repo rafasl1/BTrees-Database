@@ -54,7 +54,8 @@ int main(){
             fechaArq();
 
         }else if(palavrasIguais(entrada, remove, 6)){
-            removeRegistro();
+            int cpf;
+            removeRegistro(cpf);
             
         }else if(palavrasIguais(entrada, atualiza, 8)){
             atualizaRegistro();

@@ -33,11 +33,6 @@ bool leProximoRegistro(Registro* reg) {
    }
 }
 
-/*
-  --------------------------------------------
-  Funcoes de leitura/escrita na stdin/out
-  --------------------------------------------
-*/
 void mostraRegistro(Registro reg) {
    cout << "CPF = " << reg.cpf << endl;
    cout << "NOME = " << reg.nome << endl;

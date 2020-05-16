@@ -5,11 +5,7 @@
 
 FILE *arq = NULL;
 char SEPARADOR[2] = {SEPARADOR_CHAR, '\0'}; // nao usei define para evitar warning
-/*
-  --------------------------------------------
-              Funcoes de gravacao
-  --------------------------------------------
-*/
+// pra gravar
 void gravaBloco(char* info, int tamBlocoEmBytes) {
    if(arq == NULL) {
       cout << "ERRO: arquivo nao foi aberto." << endl;
@@ -30,13 +26,8 @@ void gravaString(char* s) {
 void gravaInt(int* n) {
    gravaBloco((char*)n, sizeof(int));
 }
-// -------------------------------------------
 
-/*
-  --------------------------------------------
-             Funcoes de leitura
-  --------------------------------------------
-*/
+// pra ler
 Buffer leBloco(int tamBlocoEmBytes) {
    Buffer buffer;
 
@@ -75,13 +66,8 @@ void leStringDoBuffer(Buffer* buffer, char* s) {
     s[i] = '\0';
     buffer->prox++; // "consome o separador"
 }
-// -------------------------------------------
 
-/*
-  --------------------------------------------
-  Funcoes de abertura e fechamento de arquivos
-  --------------------------------------------
-*/
+// funções pra abrir e fechar arquivos
 void abreArqEscrita(char* nomeArq) {
    arq = fopen(nomeArq, "wb");
 }
