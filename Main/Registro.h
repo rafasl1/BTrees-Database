@@ -9,18 +9,28 @@ typedef struct Registro {
 
 struct Chave {
    int cpf;
-   int enderecoRegistro;
+   int enderecoProximoRegistro;
 };
 
-struct CabecalhoArqIndice {
+typedef struct CabecalhoArqIndice {
    int endereco;
 };
 
-struct CabecalhoArqDados {
+typedef struct CabecalhoArqDados {
    int enderecoListaVazia;
    int bytesUsados;
    int bytesLivres;
 };
+
+typedef struct NoListaVazia {
+   Registro * registro;
+   NoListaVazia* prox;
+} NoListaVazia;
+
+typedef struct listaBlocosVazios {
+   NoListaVazia* cabeca;
+};
+
 
 void gravaRegistro(Registro reg);
 bool leProximoRegistro(Registro* reg);

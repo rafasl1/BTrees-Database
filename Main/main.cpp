@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <string>
-#include "FuncoesAuxiliares.cpp"
+#include "funcoesAuxiliares.cpp"
 #include "funcoesRegistro.cpp"
 #include "functionsArvoreB.cpp"
 
@@ -34,6 +34,7 @@ int main(){
 
         if(palavrasIguais(entrada, insere, 7)){
             // insere os dados no arquivo de dados e insere o cpf no arquivo de indice
+            // tem que verificar se vai ter um bloco disponível no arquivo de dados
             salvaDadosInsere(entrada,100,cpf,nome,sobrenome,curso,sexo,dataNascimento);
             Registro registro;
             colocaDadosNoRegistro(&registro, cpf,nome,sobrenome,curso,sexo,dataNascimento);
