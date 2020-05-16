@@ -35,14 +35,15 @@ int main(){
             salvaDadosInsere(entrada,100,cpf,nome,sobrenome,curso,sexo,dataNascimento);
             Registro registro;
             colocaDadosNoRegistro(&registro, cpf,nome,sobrenome,curso,sexo,dataNascimento);
-            fopen("memoriaSecundaria.txt","wb");
+            mostraRegistro(registro);
+            arq = fopen("memoriaSecundaria.txt","a+");
             gravaRegistro(registro);
             printf("NOVO REGISTRO CRIADO COM SUCESSO\n");
             fechaArq();
 
         }else if(palavrasIguais(entrada, busca, 5)){
             //buscaRegistro(cpf,nome,sobrenome,curso,sexo,dataNascimento);
-            fopen("memoriaSecundaria.txt","rb");
+            arq = fopen("memoriaSecundaria.txt","r+");
             Registro reg;
             while(leProximoRegistro(&reg)) {
                 cout << "---------" << endl;
