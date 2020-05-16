@@ -4,7 +4,7 @@
 #include <string>
 #include "funcoesAuxiliares.cpp"
 #include "funcoesRegistro.cpp"
-#include "functionsArvoreB.cpp"
+#include "funcoesArvoreB.cpp"
 
 using namespace std;
 
@@ -48,12 +48,7 @@ int main(){
             // a busca procura um cpf na arvore b e devolve os dados referentes a esse cpf no arquivo de dados
             arq = fopen("memoriaSecundaria.txt","r+");
             Registro reg;
-            while(leProximoRegistro(&reg)) {
-                cout << "---------" << endl;
-                mostraRegistro(reg);
-            }
-            cout << "---------" << endl;
-
+            mostraRegistro(reg);
             fechaArq();
 
         }else if(palavrasIguais(entrada, remove, 6)){
