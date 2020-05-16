@@ -2,15 +2,20 @@
 #include <stdio.h>
 #include <string.h>
 #include <string>
-#include "Funcoes.cpp"
+#include "FuncoesAuxiliares.cpp"
 #include "funcoesRegistro.cpp"
+#include "functionsArvoreB.cpp"
 
 using namespace std;
 
 int main(){
     
+    Arv_B arvore;
+    criaArvoreB(&arvore);
+
     char entrada[100] = {};
     char fechar[] = "FECHA";
+
     char* cpf = (char*)malloc(sizeof(char)*10);
     char* nome = (char*)malloc(sizeof(char)*50);
     char* sobrenome = (char*)malloc(sizeof(char)*50);
