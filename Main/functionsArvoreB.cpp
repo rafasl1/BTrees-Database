@@ -1,4 +1,4 @@
-#include "struct.cpp"
+#include "structArvoreB.cpp"
 
 void criaArvoreB(Arv_B* arvore){
     No* x = alocaNo(true);

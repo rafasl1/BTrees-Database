@@ -28,10 +28,7 @@ int main(){
         char imprimeFrag[] = {"IMPRIME_FRAGMENTACAO"};
 
         if(palavrasIguais(entrada, insere, 7)){
-         /*   documento = fopen("memoriaSecundaria.txt","a+");
-            fwrite(str, 1, sizeof(str), documento);
-            fclose(documento);*/
-            //salvaDadosDaInsercao(entrada,100,cpf,nome,sobrenome,curso,sexo,dataNascimento);
+            // insere os dados no arquivo de dados e insere o cpf no arquivo de indice
             salvaDadosInsere(entrada,100,cpf,nome,sobrenome,curso,sexo,dataNascimento);
             Registro registro;
             colocaDadosNoRegistro(&registro, cpf,nome,sobrenome,curso,sexo,dataNascimento);
@@ -41,8 +38,8 @@ int main(){
             printf("NOVO REGISTRO CRIADO COM SUCESSO\n");
             fechaArq();
 
-        }else if(palavrasIguais(entrada, busca, 5)){
-            //buscaRegistro(cpf,nome,sobrenome,curso,sexo,dataNascimento);
+        }else if(palavrasIguais(entrada, busca, 5)){ 
+            // a busca procura um cpf na arvore b e devolve os dados referentes a esse cpf no arquivo de dados
             arq = fopen("memoriaSecundaria.txt","r+");
             Registro reg;
             while(leProximoRegistro(&reg)) {

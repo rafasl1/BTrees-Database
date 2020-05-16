@@ -7,6 +7,21 @@ typedef struct Registro {
    char* dataNascimento;
 } Registro;
 
+struct Chave {
+   int cpf;
+   int enderecoRegistro;
+};
+
+struct CabecalhoArqIndice {
+   int endereco;
+};
+
+struct CabecalhoArqDados {
+   int enderecoListaVazia;
+   int bytesUsados;
+   int bytesLivres;
+};
+
 void gravaRegistro(Registro reg);
 bool leProximoRegistro(Registro* reg);
 void mostraRegistro(Registro reg);
