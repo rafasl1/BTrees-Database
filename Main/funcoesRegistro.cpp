@@ -51,6 +51,38 @@ void colocaDadosNoRegistro(Registro *reg,char* cpf, char* nome, char* sobrenome,
    reg->dataNascimento = dataNascimento;
 }
 
+void imprimeFragmentacao(CabecalhoArqDados cad){
+   if(cad.bytesUsados == 0){
+      cout << "BYTES OCUPADOS: " << cad.bytesUsados << " BYTES LIVRES: " << 1000 << " FRAGMENTACAO: " << "0.00%" << endl;
+   }else{
+      cout << "BYTES OCUPADOS: " << cad.bytesUsados << " BYTES LIVRES: " << cad.bytesLivres << " FRAGMENTACAO: " << cad.bytesLivres * 100 / (cad.bytesUsados + cad.bytesLivres) << "%" << endl;
+   }
+}
+
+void atualizaRegistro(/*Registro* reg, char* cpf, char* nome, char* sobrenome, char* curso, char* sexo, char* dataNascimento*/){
+/*    
+    reg->cpf = cpf;
+    reg->nome = nome;
+    reg->sobrenome = sobrenome;
+    reg->curso = curso;
+    reg->sexo = sexo;
+    reg->dataNascimento = dataNascimento;*/
+    cout << "REGISTRO ATUALIZADO COM SUCESSO" << endl;
+}
+
+void buscaRegistro(char * cpf){
+   /*
+   // Registro reg;
+   // buscaArvoreB (raiz,cpf) 
+   // busca dados no arquivo de dados (cpf)
+   // reg <= dados do arquivo de dados
+   if(cpf existe){
+      atualizaRegistro(cpf);
+   }else ...
+   */
+   cout << "REGISTRO NAO ENCONTRADO" << endl;
+}
+
 void inicializaListaVazia(listaBlocosVazios* listabv){
    listabv->cabeca = NULL;
 }
@@ -59,14 +91,6 @@ void inicializaCabecalhoArqDados(CabecalhoArqDados* cad){
    cad->bytesLivres = 0;
    cad->bytesUsados = 0;
    cad->enderecoListaVazia = 0;
-}
-
-void imprimeFragmentacao(CabecalhoArqDados cad){
-   if(cad.bytesUsados == 0){
-      cout << "BYTES OCUPADOS: " << cad.bytesUsados << " BYTES LIVRES: " << 1000 << " FRAGMENTACAO: " << "0.00%" << endl;
-   }else{
-      cout << "BYTES OCUPADOS: " << cad.bytesUsados << " BYTES LIVRES: " << cad.bytesLivres << " FRAGMENTACAO: " << cad.bytesLivres * 100 / (cad.bytesUsados + cad.bytesLivres) << "%" << endl;
-   }
 }
 
 void gravaCpfNoArquivoDeIndice(char* cpf){

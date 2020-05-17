@@ -55,22 +55,22 @@ void salvaDadosInsere(char entrada[], int n, char* cpf, char* nome, char* sobren
     }
 }
 
-
-void atualizaRegistro(/*Registro* reg, char* cpf, char* nome, char* sobrenome, char* curso, char* sexo, char* dataNascimento*/){
-/*    
-    reg->cpf = cpf;
-    reg->nome = nome;
-    reg->sobrenome = sobrenome;
-    reg->curso = curso;
-    reg->sexo = sexo;
-    reg->dataNascimento = dataNascimento;*/
-    cout << "REGISTRO ATUALIZADO COM SUCESSO" << endl;
+void pegaCpfBusca(char entrada[], char* cpf){
+    char delimitadorFinal[2] = ")";
+    int iterador = 0;
+    for(int i = 6; i < 100; i++){
+        if(entrada[i] == delimitadorFinal[0]){
+            break;
+        }
+        cpf[iterador++] = entrada[i];
+    }
 }
 
 void removeRegistro(int cpf){
     // removeNoArvoreB(int cpf);
     cout << "REGISTRO REMOVIDO COM SUCESSO" << endl;
 }
+
 
 // escreve o nó "x" no endereço "end"
 /*

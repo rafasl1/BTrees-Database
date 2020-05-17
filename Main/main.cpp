@@ -36,8 +36,9 @@ int main(){
     char* curso = (char*)malloc(sizeof(char)*50);
     char* sexo = (char*)malloc(sizeof(char)*2);
     char* dataNascimento = (char*)malloc(sizeof(char)*11);
-    
+
     do {
+
         cin.getline (entrada,100);
 
         if(palavrasIguais(entrada, insere, 7)){
@@ -52,14 +53,12 @@ int main(){
             fechaArq();
             gravaCpfNoArquivoDeIndice(cpf);
             // aumenta o numero de bytes utilizados (syzeof(long long) + 50 + 50 + 50 + 1)
+            // grava o novo numero de bytes no arquivo
 
         }else if(palavrasIguais(entrada, busca, 5)){ 
             arq = fopen("arquivoDeDados.txt","r+");
-            Registro reg;
-            // buscaArvoreB (raiz,cpf) 
-            // busca dados no arquivo de dados (cpf)
-            // reg <= dados do arquivo de dados
-            mostraRegistro(reg);
+            pegaCpfBusca(entrada,cpf);
+            buscaRegistro(cpf);
             fechaArq();
 
         }else if(palavrasIguais(entrada, remove, 6)){
@@ -67,7 +66,10 @@ int main(){
             removeRegistro(cpf);
             
         }else if(palavrasIguais(entrada, atualiza, 8)){
+            // salvaDadosInsere(entrada,100,....)
+            // Registro reg = buscaNaArvoreB(cpf)
             atualizaRegistro();
+            // salva no arquivo de dados
             
         }else if(palavrasIguais(entrada, imprimeFrag, 20)){
             imprimeFragmentacao(cad);
