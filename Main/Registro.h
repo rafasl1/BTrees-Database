@@ -11,11 +11,11 @@ struct Chave {
    int cpf;
    int enderecoProximoRegistro;
 };
-/*
-typedef struct CabecalhoArqIndice {
+
+struct CabecalhoArqIndice {
    int enderecoRaizArvoreB;
 };
-*/
+
 struct CabecalhoArqDados {
    int enderecoListaVazia;
    float bytesUsados;

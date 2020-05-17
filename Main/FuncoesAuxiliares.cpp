@@ -57,7 +57,8 @@ void salvaDadosInsere(char entrada[], int n, char* cpf, char* nome, char* sobren
 
 
 void atualizaRegistro(/*Registro* reg, char* cpf, char* nome, char* sobrenome, char* curso, char* sexo, char* dataNascimento*/){
-/*    reg->cpf = cpf;
+/*    
+    reg->cpf = cpf;
     reg->nome = nome;
     reg->sobrenome = sobrenome;
     reg->curso = curso;
@@ -67,6 +68,7 @@ void atualizaRegistro(/*Registro* reg, char* cpf, char* nome, char* sobrenome, c
 }
 
 void removeRegistro(int cpf){
+    // removeNoArvoreB(int cpf);
     cout << "REGISTRO REMOVIDO COM SUCESSO" << endl;
 }
 

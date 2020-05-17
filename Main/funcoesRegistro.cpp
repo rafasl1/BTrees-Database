@@ -65,7 +65,7 @@ void imprimeFragmentacao(CabecalhoArqDados cad){
    if(cad.bytesUsados == 0){
       cout << "BYTES OCUPADOS: " << cad.bytesUsados << " BYTES LIVRES: " << 1000 << " FRAGMENTACAO: " << "0.00%" << endl;
    }else{
-      cout << "BYTES OCUPADOS: " << cad.bytesUsados << " BYTES LIVRES: " << cad.bytesLivres << " FRAGMENTACAO: " << cad.bytesLivres * 100 / cad.bytesUsados << "%" << endl;
+      cout << "BYTES OCUPADOS: " << cad.bytesUsados << " BYTES LIVRES: " << cad.bytesLivres << " FRAGMENTACAO: " << cad.bytesLivres * 100 / (cad.bytesUsados + cad.bytesLivres) << "%" << endl;
    }
 }
 
@@ -75,3 +75,18 @@ void gravaCpfNoArquivoDeIndice(char* cpf){
    gravaSeparador();
    fechaArq();
 }
+
+void gravaCabecalhoArqInd(CabecalhoArqIndice cai){
+   arq = fopen("arquivoDeIndice.txt","a+");
+   gravaInt(&(cai.enderecoRaizArvoreB));
+   gravaSeparador();
+   fechaArq();
+}
+/*
+void gravaCabecalhoArqDados(ListaBlocosVazios lbv, CabecalhoArqDados cad){
+   arq = fopen("arquivoDeDados.txt","a+");
+   gravaBloco(listaVazia);
+   gravaBloco(bytesUsados);
+   gravaBloco(bytesLivres);
+   fechaArq();
+}*/

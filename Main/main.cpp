@@ -13,14 +13,22 @@ int main(){
     Arv_B arvore;
     criaArvoreB(&arvore);
 
+    CabecalhoArqDados cad;
     listaBlocosVazios listabv;
     inicializaListaVazia(&listabv);
-
-    CabecalhoArqDados cad;
     inicializaCabecalhoArqDados(&cad);
+    // grava no arquivo de dados
+
+    CabecalhoArqIndice cai;
+    gravaCabecalhoArqInd(cai);
 
     char entrada[100] = {};
     char fechar[] = "FECHA";
+    char insere[] = {"INSERE("};
+    char busca[] = {"BUSCA"};
+    char remove[] = {"REMOVE"};
+    char atualiza[] = {"ATUALIZA"};
+    char imprimeFrag[] = {"IMPRIME_FRAGMENTACAO"};
 
     char* cpf = (char*)malloc(sizeof(char)*10);
     char* nome = (char*)malloc(sizeof(char)*50);
@@ -32,14 +40,7 @@ int main(){
     do {
         cin.getline (entrada,100);
 
-        char insere[] = {"INSERE("};
-        char busca[] = {"BUSCA"};
-        char remove[] = {"REMOVE"};
-        char atualiza[] = {"ATUALIZA"};
-        char imprimeFrag[] = {"IMPRIME_FRAGMENTACAO"};
-
         if(palavrasIguais(entrada, insere, 7)){
-            // insere no arquivo de indice (long long cpf)
             // verifica se tem bloco disponivel ()
             salvaDadosInsere(entrada,100,cpf,nome,sobrenome,curso,sexo,dataNascimento);
             Registro registro;
@@ -50,12 +51,12 @@ int main(){
             printf("NOVO REGISTRO CRIADO COM SUCESSO\n");
             fechaArq();
             gravaCpfNoArquivoDeIndice(cpf);
-            // aumenta o numero de bytes utilizados
+            // aumenta o numero de bytes utilizados (syzeof(long long) + 50 + 50 + 50 + 1)
 
         }else if(palavrasIguais(entrada, busca, 5)){ 
             arq = fopen("arquivoDeDados.txt","r+");
             Registro reg;
-            // procura na arvore b (cpf) 
+            // buscaArvoreB (raiz,cpf) 
             // busca dados no arquivo de dados (cpf)
             // reg <= dados do arquivo de dados
             mostraRegistro(reg);
