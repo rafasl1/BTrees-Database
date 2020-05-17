@@ -1,4 +1,4 @@
-all: main.cpp Funcoes.cpp Buffer.o Registro.o
+all: main.cpp Funcoes.cpp Buffer.o Registro.o ArvoreB.o
 	g++ -o main main.cpp
 
 Buffer.o : funcoesBuffer.cpp Buffer.h
@@ -6,3 +6,6 @@ Buffer.o : funcoesBuffer.cpp Buffer.h
 
 Registro.o : funcoesRegistro.cpp Registro.h
 	g++ -c funcoesRegistro.cpp
+
+ArvoreB.o : structArvoreB.cpp funcoesArvoreB.cpp
+	g++ -c funcoesArvoreB.cpp
