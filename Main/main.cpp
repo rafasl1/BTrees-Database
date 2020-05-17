@@ -45,19 +45,19 @@ int main(){
             salvaDadosInsere(entrada,100,cpf,nome,sobrenome,curso,sexo,dataNascimento);
             Registro registro;
             colocaDadosNoRegistro(&registro, cpf,nome,sobrenome,curso,sexo,dataNascimento);
-            mostraRegistro(registro);
-            arq = fopen("memoriaSecundaria.txt","a+");
+            mostraRegistro(registro); // tirar isso aqui depois
+            arq = fopen("arquivoDeDados.txt","a+");
             gravaRegistro(registro);
             printf("NOVO REGISTRO CRIADO COM SUCESSO\n");
             fechaArq();
             // aumenta o numero de bytes utilizados
 
         }else if(palavrasIguais(entrada, busca, 5)){ 
-            arq = fopen("memoriaSecundaria.txt","r+");
+            arq = fopen("arquivoDeDados.txt","r+");
             Registro reg;
             // procura na arvore b (cpf) 
             // busca dados no arquivo de dados (cpf)
-            // reg = dados do arquivo de dados
+            // reg <= dados do arquivo de dados
             mostraRegistro(reg);
             fechaArq();
 

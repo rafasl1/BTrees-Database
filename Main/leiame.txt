@@ -17,3 +17,8 @@ Depois para executar o programa:
 
 Outras observações: 
 
+Encontrei dificuldades em conseguir armazenar e acessar os dados 
+de forma correta nos arquivos (de índice e de dados), então as funções
+de busca, atualização, deleção e imprimir fragmentação não estão funcionando bem.
+
+*A de busca está com um bug. É bem comum que quando é chamada o programa finaliza.

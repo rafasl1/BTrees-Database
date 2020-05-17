@@ -63,8 +63,13 @@ void inicializaCabecalhoArqDados(CabecalhoArqDados* cad){
 
 void imprimeFragmentacao(CabecalhoArqDados cad){
    if(cad.bytesUsados == 0){
-      cout << "BYTES OCUPADOS: " << cad.bytesUsados << " BYTES LIVRES: " << cad.bytesLivres << " FRAGMENTACAO: " << "0.00%" << endl;
+      cout << "BYTES OCUPADOS: " << cad.bytesUsados << " BYTES LIVRES: " << 1000 << " FRAGMENTACAO: " << "0.00%" << endl;
    }else{
       cout << "BYTES OCUPADOS: " << cad.bytesUsados << " BYTES LIVRES: " << cad.bytesLivres << " FRAGMENTACAO: " << cad.bytesLivres * 100 / cad.bytesUsados << "%" << endl;
    }
 }
+/*
+void gravaCpfNoArquivoDeIndice(char* nomeDoDocumento, long long cpf){
+   FILE* documento = fopen(nomeDoDocumento,"a+");
+   fwrite(,);
+}*/
