@@ -50,3 +50,13 @@ void colocaDadosNoRegistro(Registro *reg,char* cpf, char* nome, char* sobrenome,
    reg->sexo = sexo;
    reg->dataNascimento = dataNascimento;
 }
+
+void inicializaListaVazia(listaBlocosVazios* listabv){
+   listabv->cabeca = NULL;
+}
+
+void inicializaCabecalhoArqDados(CabecalhoArqDados* cad){
+   cad->bytesLivres = 0;
+   cad->bytesUsados = 0;
+   cad->enderecoListaVazia = 0;
+}

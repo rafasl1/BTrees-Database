@@ -13,6 +13,12 @@ int main(){
     Arv_B arvore;
     criaArvoreB(&arvore);
 
+    listaBlocosVazios listabv;
+    inicializaListaVazia(&listabv);
+
+    CabecalhoArqDados cad;
+    inicializaCabecalhoArqDados(&cad);
+
     char entrada[100] = {};
     char fechar[] = "FECHA";
 
@@ -33,8 +39,9 @@ int main(){
         char imprimeFrag[] = {"IMPRIME_FRAGMENTACAO"};
 
         if(palavrasIguais(entrada, insere, 7)){
-            // insere os dados no arquivo de dados e insere o cpf no arquivo de indice
-            // tem que verificar se vai ter um bloco disponível no arquivo de dados
+            // insere no arquivo de dados (nome,cpf,etc...) 
+            // insere no arquivo de indice (long long cpf)
+            // verifica se tem bloco disponivel ()
             salvaDadosInsere(entrada,100,cpf,nome,sobrenome,curso,sexo,dataNascimento);
             Registro registro;
             colocaDadosNoRegistro(&registro, cpf,nome,sobrenome,curso,sexo,dataNascimento);
@@ -43,11 +50,14 @@ int main(){
             gravaRegistro(registro);
             printf("NOVO REGISTRO CRIADO COM SUCESSO\n");
             fechaArq();
+            // aumenta o numero de bytes utilizados
 
         }else if(palavrasIguais(entrada, busca, 5)){ 
-            // a busca procura um cpf na arvore b e devolve os dados referentes a esse cpf no arquivo de dados
             arq = fopen("memoriaSecundaria.txt","r+");
             Registro reg;
+            // procura na arvore b (cpf) 
+            // busca dados no arquivo de dados (cpf)
+            // reg = dados do arquivo de dados
             mostraRegistro(reg);
             fechaArq();
 
@@ -59,7 +69,7 @@ int main(){
             atualizaRegistro();
             
         }else if(palavrasIguais(entrada, imprimeFrag, 20)){
-            imprimeFragmentacao(143,28);
+            imprimeFragmentacao(cad);
             
         }else if(palavrasIguais(entrada, fechar, 5)){
             printf("ENCERRANDO\n");

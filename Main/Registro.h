@@ -13,24 +13,23 @@ struct Chave {
 };
 /*
 typedef struct CabecalhoArqIndice {
-   int endereco;
-};
-
-typedef struct CabecalhoArqDados {
-   int enderecoListaVazia;
-   int bytesUsados;
-   int bytesLivres;
+   int enderecoRaizArvoreB;
 };
 */
+typedef struct CabecalhoArqDados {
+   int enderecoListaVazia;
+   float bytesUsados;
+   float bytesLivres;
+};
+
 typedef struct NoListaVazia {
    Registro * registro;
    NoListaVazia* prox;
 } NoListaVazia;
-/*
+
 typedef struct listaBlocosVazios {
    NoListaVazia* cabeca;
 };
-*/
 
 void gravaRegistro(Registro reg);
 bool leProximoRegistro(Registro* reg);
