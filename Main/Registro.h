@@ -16,7 +16,7 @@ typedef struct CabecalhoArqIndice {
    int enderecoRaizArvoreB;
 };
 */
-typedef struct CabecalhoArqDados {
+struct CabecalhoArqDados {
    int enderecoListaVazia;
    float bytesUsados;
    float bytesLivres;
@@ -27,7 +27,7 @@ typedef struct NoListaVazia {
    NoListaVazia* prox;
 } NoListaVazia;
 
-typedef struct listaBlocosVazios {
+struct listaBlocosVazios {
    NoListaVazia* cabeca;
 };
 

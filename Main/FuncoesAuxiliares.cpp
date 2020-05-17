@@ -55,9 +55,6 @@ void salvaDadosInsere(char entrada[], int n, char* cpf, char* nome, char* sobren
     }
 }
 
-void imprimeFragmentacao(CabecalhoArqDados cad){
-    cout << "BYTES OCUPADOS: " << cad.bytesUsados << " BYTES LIVRES: " << cad.bytesLivres << " FRAGMENTACAO: " << cad.bytesLivres * 100 / cad.bytesUsados << "%" << endl;
-}
 
 void atualizaRegistro(/*Registro* reg, char* cpf, char* nome, char* sobrenome, char* curso, char* sexo, char* dataNascimento*/){
 /*    reg->cpf = cpf;

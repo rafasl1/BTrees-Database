@@ -60,3 +60,11 @@ void inicializaCabecalhoArqDados(CabecalhoArqDados* cad){
    cad->bytesUsados = 0;
    cad->enderecoListaVazia = 0;
 }
+
+void imprimeFragmentacao(CabecalhoArqDados cad){
+   if(cad.bytesUsados == 0){
+      cout << "BYTES OCUPADOS: " << cad.bytesUsados << " BYTES LIVRES: " << cad.bytesLivres << " FRAGMENTACAO: " << "0.00%" << endl;
+   }else{
+      cout << "BYTES OCUPADOS: " << cad.bytesUsados << " BYTES LIVRES: " << cad.bytesLivres << " FRAGMENTACAO: " << cad.bytesLivres * 100 / cad.bytesUsados << "%" << endl;
+   }
+}
