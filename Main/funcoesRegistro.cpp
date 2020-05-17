@@ -68,8 +68,10 @@ void imprimeFragmentacao(CabecalhoArqDados cad){
       cout << "BYTES OCUPADOS: " << cad.bytesUsados << " BYTES LIVRES: " << cad.bytesLivres << " FRAGMENTACAO: " << cad.bytesLivres * 100 / cad.bytesUsados << "%" << endl;
    }
 }
-/*
-void gravaCpfNoArquivoDeIndice(char* nomeDoDocumento, long long cpf){
-   FILE* documento = fopen(nomeDoDocumento,"a+");
-   fwrite(,);
-}*/
+
+void gravaCpfNoArquivoDeIndice(char* cpf){
+   arq = fopen("arquivoDeIndice.txt","a+");
+   gravaString(cpf);
+   gravaSeparador();
+   fechaArq();
+}

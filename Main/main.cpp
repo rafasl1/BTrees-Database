@@ -39,7 +39,6 @@ int main(){
         char imprimeFrag[] = {"IMPRIME_FRAGMENTACAO"};
 
         if(palavrasIguais(entrada, insere, 7)){
-            // insere no arquivo de dados (nome,cpf,etc...) 
             // insere no arquivo de indice (long long cpf)
             // verifica se tem bloco disponivel ()
             salvaDadosInsere(entrada,100,cpf,nome,sobrenome,curso,sexo,dataNascimento);
@@ -50,6 +49,7 @@ int main(){
             gravaRegistro(registro);
             printf("NOVO REGISTRO CRIADO COM SUCESSO\n");
             fechaArq();
+            gravaCpfNoArquivoDeIndice(cpf);
             // aumenta o numero de bytes utilizados
 
         }else if(palavrasIguais(entrada, busca, 5)){ 
