@@ -72,3 +72,33 @@ void atualizaRegistro(/*Registro* reg, char* cpf, char* nome, char* sobrenome, c
 void removeRegistro(int cpf){
     cout << "REGISTRO REMOVIDO COM SUCESSO" << endl;
 }
+
+// escreve o nó "x" no endereço "end"
+/*
+void disk_write(No* x, int end) {
+    fseek("arquivoDeIndice.txt",3*sizeof(int),SEEK_END);
+    write_buffer x->folha
+    write_buffer x->nChaves
+    write_buffer x->chaves // deve ocupar sizeof(Chave) * (2*t - 1) bytes
+
+   if(x->folha) {
+        write_buffer x->endFilhos // deve ocupar sizeof(int) * 2*t bytes
+   }
+
+   write_no_disco
+}
+
+No* disk_read(int end) {
+   fseek("arquivoDeIndice.txt",3*sizeof(int),SEEK_END);
+   aloca nó y na memória principal
+   buffer <- read_disco // quantos bytes? depende se é ou não folha. Pensa aí!
+   y->folha <- read_buffer bool 
+   y->nChaves <- read_buffer int 
+   y->chaves  <- read_buffer sizeof(Chave) * (2*t - 1) bytes 
+
+   if(y->folha) {  
+      y->endFilhos <- read_buffer sizeof(int) * 2*t bytes  
+   }
+
+   return y
+}*/

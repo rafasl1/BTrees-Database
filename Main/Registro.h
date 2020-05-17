@@ -16,7 +16,6 @@ typedef struct CabecalhoArqIndice {
    int endereco;
 };
 
-
 typedef struct CabecalhoArqDados {
    int enderecoListaVazia;
    int bytesUsados;

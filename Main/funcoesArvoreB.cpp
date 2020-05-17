@@ -76,7 +76,11 @@ void splitArvoreB(No* x, int i, No* y){
    x->chave[i] = y->chave[b_tree_t - 1]; // chave que foi promovida
    x->nChaves++;
 
-   // disk write no x, y e z
+   /* 
+   disk write(x)
+   disk write(y)
+   disk write(z)
+   */
 }
 
 void insereNaArvoreB(Arv_B* arvore, int k){
