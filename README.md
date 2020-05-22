@@ -11,4 +11,4 @@ Database created with C++ using B Trees
   <li>Imprimir fragmentação: razão entre o número de bytes vazios e o número de bytes total do arquivo de dados</li>
 </ul>
 <p>Os cpf deveriam ser armazenados no arquivo de índices, e os dados referentes a ele seriam armazenados no arquivo de dados, que possui os campos: nome, sobrenome, curso, sexo e data de nascimento.</p>
-<p>O intermédio entre a memória secundária (arquivo de índices) e memória principal é feita por um buffer que deveria receber os dados do arquivo e colocá-los em variáveis, para depois serem colocadas no registro desejado.</p>
+<p>O intermédio entre a memória secundária (arquivo de índices) e memória principal é feita por um buffer que deveria receber os dados do arquivo e colocá-los em variáveis para que depois fossem colocadas no registro desejado.</p>
