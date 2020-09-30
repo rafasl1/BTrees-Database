@@ -1,6 +1,4 @@
 # BTrees-Database
-Database created with C++ using B Trees
-
 <p>Estudo Programa 1 para a disciplina de Algoritmos e Estrutura de Dados 2 (ACH2024).</p>
 <p>O EP consistia em criar um banco de dados que implementa uma árvore B como estrutura de dados. O BD deveria realizar as seguintes operações: </p>
 <ul>
